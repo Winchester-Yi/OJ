@@ -14,9 +14,11 @@ int printHour(int p,int i,char *s1,char *s2){
 		if(*(s1+p)==*(s2+p)){
 			if(isdigit(*(s1+p))){
 				printf("%d:",*(s1+p));
+				break;
 			}
 			else if(isupper(*(s1+p))){
-				printf("%d:",*(s1+p)-31);
+				printf("%d:",*(s1+p)-55);
+				break;
 			}
 		}
 	}
@@ -24,7 +26,7 @@ int printHour(int p,int i,char *s1,char *s2){
 }
 
 int main(){
-	char day[][3]={"MON","TUE","WED","THU","FRI","SAT","SUN"};
+	char day[][4]={"MON","TUE","WED","THU","FRI","SAT","SUN"};
 	char s1[60];
 	char s2[60];
 	char s3[60];
@@ -37,18 +39,19 @@ int main(){
 	int j=(strlen(s3)>strlen(s4))?strlen(s4):strlen(s3);
 	int p;
 
-	for(p=0;p>i;p++){
-		if(isupper(*(s1+p)))
+	for(p=0;p<i;p++){
+		if(isupper(*(s1+p))){
 			if(*(s1+p)==*(s2+p)){
-				printf("%s ",*(day+(*(s1+p)-41)));
+				printf("%s ",day[*(s1+p)-65]);
 				printHour(p,i,s1,s2);
 				break;
 			}
+		}
 	}
 	for(p=0;p<j;p++){
 		if(isalpha(*(s3+p))){
 			if(*(s3+p)==*(s4+p)){
-				printf("%2d",p);
+				printf("%02d",p);
 				break;
 			}
 		}
