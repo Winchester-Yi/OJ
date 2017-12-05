@@ -13,10 +13,10 @@ int printHour(int p,int i,char *s1,char *s2){
 	for(p++;p<i;p++){
 		if(*(s1+p)==*(s2+p)){
 			if(isdigit(*(s1+p))){
-				printf("%d:",*(s1+p));
+				printf("%02d:",*(s1+p));
 				break;
 			}
-			else if(isupper(*(s1+p))){
+			else if(*(s1+p)>=65 && *(s1+p)<=78){
 				printf("%d:",*(s1+p)-55);
 				break;
 			}
@@ -40,7 +40,7 @@ int main(){
 	int p;
 
 	for(p=0;p<i;p++){
-		if(isupper(*(s1+p))){
+		if((*(s1+p)>=65 && *(s1+p)<=71)){
 			if(*(s1+p)==*(s2+p)){
 				printf("%s ",day[*(s1+p)-65]);
 				printHour(p,i,s1,s2);
