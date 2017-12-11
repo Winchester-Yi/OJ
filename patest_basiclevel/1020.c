@@ -1,23 +1,21 @@
 /*************************************************************************
-    > File Name: test.c
+    > File Name: 1020.c
     > Author: YiShixiang
     > Mail: yishixiang@gmail.com 
-    > Created Time: Mon 06 Nov 2017 03:31:13 PM CST
+    > Created Time: Wed 06 Dec 2017 08:16:37 PM CST
  ************************************************************************/
 
 #include<stdio.h>
-#include<string.h>
-
 
 int main()
 {
-	int a[10];
-	int n;
+	int stra;
+	int need;
+	int sum;
 
-	scanf("%d",&n);
-	while(n--)
-		scanf("%d",&a[n]);
-	for(n=0;n<10;n++)
-		printf("%d ",a[n]);
+	scanf("%d %d",&stra,&need);
+	int *p=(int *)malloc(stra*sizeof(int));
+	int *q=(int *)malloc(stra*sizeof(int));
+
 	return 0;
 }
